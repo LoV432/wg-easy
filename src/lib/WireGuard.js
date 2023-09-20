@@ -146,6 +146,7 @@ AllowedIPs = ${client.address}/32`;
       latestHandshakeAt: null,
       transferRx: null,
       transferTx: null,
+      endpoint: null,
     }));
 
     // Loop WireGuard status
@@ -160,7 +161,7 @@ AllowedIPs = ${client.address}/32`;
         const [
           publicKey,
           preSharedKey, // eslint-disable-line no-unused-vars
-          endpoint, // eslint-disable-line no-unused-vars
+          endpoint,
           allowedIps, // eslint-disable-line no-unused-vars
           latestHandshakeAt,
           transferRx,
@@ -177,6 +178,7 @@ AllowedIPs = ${client.address}/32`;
         client.transferRx = Number(transferRx);
         client.transferTx = Number(transferTx);
         client.persistentKeepalive = persistentKeepalive;
+        client.endpoint = endpoint === '(none)' ? null : endpoint;
       });
 
     return clients;

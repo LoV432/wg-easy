@@ -169,6 +169,8 @@
 
                     <!-- Address -->
                     <span class="group">
+                      <span v-if="client.endpoint"
+                        class="block border-t-2 border-b-2 border-transparent">{{client.endpoint.split(':')[0]}}</span>
 
                       <!-- Show -->
                       <input v-show="clientEditAddressId === client.id" v-model="clientEditAddress"
